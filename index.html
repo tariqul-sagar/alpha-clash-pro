@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha Clash Pro</title>
+    <!-- Daisy UI & Tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
+
+<body class="font-poppins">
+
     <header></header>
 
-    <main></main>
+    <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
+
+        <section class="home min-h-screen text-white flex flex-col justify-center">
+
+            <div class="flex flex-col items-center gap-6">
+                <h1 class="text-8xl font-anton uppercase">Alphabet Clash</h1>
+                <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+                <button class="btn bg-white text-black">Play Now</button>
+            </div>
+
+        </section>
+
+        <section class="play-ground"></section>
+
+        <section class="score"></section>
+
+    </main>
 
     <script src="js/srcipt.js"></script>
 
 </body>
+
 </html>
