@@ -8,21 +8,40 @@
 //     playGround.classList.remove('hidden');
 // }
 
+function handleKeyboardKeyUpEvent(event) {
+  const playerPressed = event.key;
 
-function continueGame() {
-    const alphabet = getARandomAlphabet();
+  // get the expected to press
+  const currentAlphabetElement = document.getElementById("current-alphabet");
+  const currentAlphabet = currentAlphabetElement.innerText;
+  const expectedAlphabet = currentAlphabet.toLowerCase();
 
-    // set the random alphabet
-    const currentAlphabetElement = document.getElementById('current-alphabet');
-    currentAlphabetElement.innerText = alphabet;
+  // Checked matched or not
 
-    // set bg color
-    setBgColor(alphabet);
+  if (playerPressed === expectedAlphabet) {
+    console.log("You got a point");
+    removeBgColor(expectedAlphabet);
+    continueGame();
+  } else {
+    console.log("You loss a life");
+  }
 }
 
+document.addEventListener("keyup", handleKeyboardKeyUpEvent);
+
+function continueGame() {
+  const alphabet = getARandomAlphabet();
+
+  // set the random alphabet
+  const currentAlphabetElement = document.getElementById("current-alphabet");
+  currentAlphabetElement.innerText = alphabet;
+
+  // set bg color
+  setBgColor(alphabet);
+}
 
 function play() {
-    hideElementById('home-screen');
-    showElementById('playground');
-    continueGame();
+  hideElementById("home-screen");
+  showElementById("playground");
+  continueGame();
 }
